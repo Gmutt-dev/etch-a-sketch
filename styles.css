@@ -2,6 +2,7 @@
 .container {
     height: 600px;
     width: 600px;
+    border-style: solid;
     display: flex;
     flex-direction: column;
 }
@@ -15,4 +16,5 @@
 /* flexitem blocks in rows of flexbox containers -> stretch equally in row width + row height */
 .block {
     flex: 1 0 auto;
+
 }
