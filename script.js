@@ -63,5 +63,5 @@ button.addEventListener("click", (e) => {
         gridSize = Number.parseInt(prompt("Please enter the new number of squares per side? (max 100)", "16"));
         if (!((gridSize <= 100) && (gridSize >= 1))) alert("invalid input, please try again"); //test if input is max 100
     } while (!((gridSize <= 100) && (gridSize >= 1)));
-    console.log(gridSize);
+    drawGrid(gridSize);
 })
