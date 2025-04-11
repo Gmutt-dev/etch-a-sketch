@@ -1,0 +1,15 @@
+.container {
+
+}
+
+/* make all rows flexbox containers */
+.row {
+    display: flex;
+}
+
+/* flexitem blocks in rows of flexbox containers -> stretch equally in row width + rows height */
+.block {
+    width: 1;
+    height: auto;
+    flex: 1 0 auto;
+}
