@@ -34,6 +34,15 @@ function drawGrid(gridSize) {
 //SCRIPT ENTRY POINT
 //get the .container div from the DOM
 const container = document.querySelector(".container");
+
 //initialize page with startup page content with 16 x 16 grid of blocks
 let gridSize = 16;  // project requires initial grid to be 16 x 16
 drawGrid(gridSize);
+
+//add onmousever event handler to outer container box
+container.addEventListener("mouseover", (e) => {
+    if (e.target !== container) {  //mouseover the outside container itself should not have an effect on the grid
+        e.target.style.backgroundColor = "black";
+        }
+    }
+)
