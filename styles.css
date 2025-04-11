@@ -1,15 +1,18 @@
+/* make fixed height and width container and a flexbox container */
 .container {
-
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
-/* make all rows flexbox containers */
+/* make all rows flexbox containers AND flexbox items of outer container to stretch */
 .row {
     display: flex;
+    flex: 1 0 auto;
 }
 
-/* flexitem blocks in rows of flexbox containers -> stretch equally in row width + rows height */
+/* flexitem blocks in rows of flexbox containers -> stretch equally in row width + row height */
 .block {
-    width: 1;
-    height: auto;
     flex: 1 0 auto;
 }
