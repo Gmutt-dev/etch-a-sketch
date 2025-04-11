@@ -16,5 +16,4 @@
 /* flexitem blocks in rows of flexbox containers -> stretch equally in row width + row height */
 .block {
     flex: 1 0 auto;
-
 }
