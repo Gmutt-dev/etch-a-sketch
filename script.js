@@ -46,7 +46,6 @@ function randomRGBColor() {
 function colorBlock(block) {
     //get the current block opacity
     let blockOpacity = Number.parseFloat(block.style.opacity) || 0;
-    console.log(blockOpacity);
     //change background color to random.  Note that this auto sets opacity to 100, hence the previous step.
     block.style.backgroundColor = `rgb(${randomRGBColor()}, ${randomRGBColor()}, ${randomRGBColor()})`;
     //increase current opacity by 10%, if not 100% already
