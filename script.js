@@ -39,6 +39,20 @@ function drawGrid(gridSize) {
     }
 }
 
+function randomRGBColor() {
+    return (Math.floor(Math.random() * 256));
+}
+
+function colorBlock(block) {
+    //get the current block opacity
+    let blockOpacity = Number.parseFloat(block.style.opacity) || 0;
+    console.log(blockOpacity);
+    //change background color to random.  Note that this auto sets opacity to 100, hence the previous step.
+    block.style.backgroundColor = `rgb(${randomRGBColor()}, ${randomRGBColor()}, ${randomRGBColor()})`;
+    //increase current opacity by 10%, if not 100% already
+    if (blockOpacity < 1) block.style.opacity = ((blockOpacity * 10 + 1) / 10).toString();
+}
+
 //SCRIPT ENTRY POINT
 //get the .container div from the DOM
 const container = document.querySelector(".container");
@@ -47,10 +61,10 @@ const container = document.querySelector(".container");
 let gridSize = 16;  // project requires initial grid to be 16 x 16
 drawGrid(gridSize);
 
-//add onmousever event handler to outer container box
+//add onmousever event handler to outer container box -> change background color
 container.addEventListener("mouseover", (e) => {
     if (e.target !== container) {  //mouseover the outside container itself should not have an effect on the grid
-        e.target.style.backgroundColor = "black";
+        colorBlock(e.target);
         }
     }
 )
@@ -58,6 +72,7 @@ container.addEventListener("mouseover", (e) => {
 //get the <button> from the DOM
 const button = document.querySelector(".button");
 
+//when button clicked, prompt for user input
 button.addEventListener("click", (e) => {
     do {
         gridSize = Number.parseInt(prompt("Please enter the new number of squares per side? (max 100)", "16"));
